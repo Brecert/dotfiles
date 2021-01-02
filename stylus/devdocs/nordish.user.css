@@ -1,0 +1,88 @@
+/* ==UserStyle==
+@name           nordish
+@namespace      github.com/brecert/dotfiles
+@version        0.9.0
+@description    Nord-like theme for devdocs.io
+@author         bree
+==/UserStyle== */
+
+@-moz-document domain("devdocs.io") {
+  :root._theme-dark {
+    --contentBackground: #2d3748;
+
+    --searchBorder: transparent;
+    --searchTagBackground: rgba(74, 85, 104);
+
+    --boxBackground: #1a202c;
+    --boxBorder: transparent;
+    --boxHeaderBackground: transparent;
+
+    --noteBlueBackground: #4a5568;
+    --noteBlueBorder: transparent;
+
+    --noteGreenBackground: #51684a;
+    --noteGreenBorder: transparent;
+
+    --focusBackground: #1e2132;
+    --focusBorder: #fff;
+
+    --sidebarBackground: #161821;
+
+    --headerBackground: #242940;
+    --headerBorder: transparent;
+  }
+
+  :root._theme-dark {
+    --prismKeyword: #84a0c6;
+    --prismFunction: unset;
+    --prismText: #89a993;
+    --prismOperator: #d4dce6;
+    --prismValue: #84a0c6;
+    --prismVariable: #c684b9;
+  }
+
+  /* custom */
+
+  :root {
+    --textColorDark: #111;
+    --textColorDarkLight: #4a5568;
+    --inputFocusBackground: rgb(255, 255, 255);
+    --codeBackground: var(--noteBlueBackground);
+  }
+
+  input:focus {
+    color: var(--textColorDark);
+    background-color: var(--inputFocusBackground);
+  }
+
+  input:focus ~ * {
+    --searchTagBackground: rgb(186, 191, 201);
+    color: var(--textColorDarkLight);
+  }
+
+  h1 {
+    font-size: 1.875rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  h1::after {
+    content: none !important;
+  }
+
+  pre,
+  ._redis > .example,
+  ._toc,
+  ._docs-links,
+  ._bootstrap a.thumbnail {
+    border-radius: 0.25rem !important;
+  }
+
+  code {
+    padding: 0.15rem;
+    border-radius: 0.25rem;
+    background-color: var(--codeBackground);
+  }
+}

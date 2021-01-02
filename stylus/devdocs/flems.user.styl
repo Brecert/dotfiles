@@ -1,0 +1,56 @@
+/* ==UserStyle==
+@name           Darker Flems
+@namespace      github.com/brecert/dotfiles
+@version        1.0.0
+@description    A darker theme for flems.io
+@author         bree
+
+@preprocessor   stylus
+==/UserStyle== */
+
+@-moz-document domain("flems.io") {
+  :root {
+    --primary-color: #263238;
+    --secondary-color: #fcfcff;
+    --faded-color: #1d262a;
+  }
+
+  // not really darker but I like.
+  #flems * {
+    font-family: 'Fira Code' !important;
+  }
+
+  .cm-s-material .cm-error {
+    background-color: rgba(#ec5f67, 0.5) !important;
+  }
+
+  .console, .toolbar {
+    background: var(--primary-color) !important;
+    color: #fcfcff !important;
+  }
+
+  .tab[style*='background'] {
+    background: var(--secondary-color) !important;
+    color: #333 !important;
+  }
+
+  .logLine {
+    color: #aaaaaa !important;
+  }
+
+  .input label {
+    color: orange !important;
+  }
+
+  .input textarea {
+    color: var(--secondary-color);
+  }
+
+  .editor > div:first-child:not(.toolbar), iframe + div {
+    background-color: #263238 !important;
+    color: var(--secondary-color) !important;
+    box-shadow: none !important;
+    border-left: 1px solid var(--faded-color) !important;
+    // box-shadow: rgba(0, 0, 0, 0.35) -1px 3px 3px
+  }
+}
